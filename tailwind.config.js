@@ -12,6 +12,9 @@ export default {
         offWhite: '#E8E8E8',
         whiteColor: '#FFF',
       },
+      backgroundImage:{
+        bgImage: "url('../src/assets/bg-image.png')",
+      },
     },
   },
   plugins: [],
