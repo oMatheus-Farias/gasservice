@@ -85,6 +85,10 @@ export default function AuthProvider({ children }: { children: ReactNode }){
     });
   };
 
+  function setLocalStorage(data: UserProps){
+    localStorage.setItem('@userData', JSON.stringify(data));
+  };
+
   return(
     <AuthContext.Provider value={{ signed: !!user, user, signUp, signIn }} >
       { children }
