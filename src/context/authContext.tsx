@@ -5,6 +5,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 interface AuthContextData{
   signed: boolean,
@@ -65,10 +66,12 @@ export default function AuthProvider({ children }: { children: ReactNode }){
         setUser(data);
         setLocalStorage(data);
         navigate('/');
+        toast.success('Cadastrado com sucesso!');
       });
     })
     .catch((error) => {
       console.log('Erro ao tentar criar cadastro', error);
+      toast.error('Ocorreu um erro inesperado!');
     });
   };
 
@@ -89,9 +92,11 @@ export default function AuthProvider({ children }: { children: ReactNode }){
       setUser(data);
       setLocalStorage(data);
       navigate('/start');
+      toast.success('Bem-vindo(a)');
     })
     .catch((error) => {
       console.log('Erro ao tentar efetuar login', error);
+      toast.error('Ocorreu um erro inesperado!');
     });
   };
 
