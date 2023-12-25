@@ -13,6 +13,7 @@ interface AuthContextData{
   signUp: ({ name, email, password }: SignUpUserProps) => void,
   signIn: ({ email, password }: SignInUserProps) => void,
   authLoading: boolean,
+  screenSize: any,
 };
 
 interface SignInUserProps{
@@ -39,14 +40,22 @@ export default function AuthProvider({ children }: { children: ReactNode }){
 
   const [user, setUser] = useState<UserProps | null>(null);
   const [authLoading, setAuthLoading] = useState(false);
+  const [screenSize, setScreenSize] = useState<any>(null);
 
   useEffect(() => {
+    handleScreenSize();
     const hasUser = localStorage.getItem('@userData');
 
     if(hasUser){
       setUser(JSON.parse(hasUser));
     };
   }, []);
+
+  window.addEventListener('resize', handleScreenSize);
+
+  function handleScreenSize(){
+    window.innerWidth >= 1024 ? setScreenSize(true) : setScreenSize(false);
+  };
 
   async function signUp({ name, email, password }: SignUpUserProps){
     setAuthLoading(true);
@@ -115,7 +124,7 @@ export default function AuthProvider({ children }: { children: ReactNode }){
   };
 
   return(
-    <AuthContext.Provider value={{ signed: !!user, user, signUp, signIn, authLoading }} >
+    <AuthContext.Provider value={{ signed: !!user, user, signUp, signIn, authLoading, screenSize }} >
       { children }
     </AuthContext.Provider>
   );
