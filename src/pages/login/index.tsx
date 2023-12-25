@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
 const schema = z.object({
-  email: z.string().email('O email é obrigatório'),
+  email: z.string().email('Digite um email válido'),
   password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres').nonempty('A senha é obrogatória'),
 });
 

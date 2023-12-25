@@ -12,7 +12,7 @@ interface InputProps{
 export default function Input({ type, name, placeholder, register, error, rules }: InputProps){
   return(
     <div>
-      <div className='flex mt-8' >
+      <div className='flex mt-6' >
         <div className='h-10 w-1 bg-redColor rounded-l-sm' ></div>
         <input 
           className='h-10 w-full px-3 rounded-r-sm outline-none'
