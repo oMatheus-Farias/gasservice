@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/authContext';
 
 import { Link } from 'react-router-dom';
-import logoImage01 from '../../assets/logo2.svg';
+import logoImage02 from '../../assets/logo2.svg';
 import Input from '../../components/Input';
 
 import { useForm } from 'react-hook-form';
@@ -36,7 +36,7 @@ export default function Login(){
       <section className='w-full min-h-screen flex flex-col justify-center items-center lg:flex-row lg:max-w-[63.7em]' >
         <div className="w-full bg-bgImage bg-cover bg-center flex flex-col items-center rounded-t lg:px-5 lg:pb-[7.87em] lg:rounded-t-none lg:rounded-l" >
           <img
-            src={ logoImage01 }
+            src={ logoImage02 }
             alt='Logo Gas Service Company'
             className='mt-4 rounded-sm'
           />
