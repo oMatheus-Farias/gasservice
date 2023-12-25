@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import logoImage01 from '../../assets/logo2.svg';
 
+import Input from '../../components/Input';
+
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -17,6 +19,10 @@ export default function Login(){
     resolver: zodResolver(schema),
     mode: 'onChange',
   });
+
+  function onSubmit(){
+    alert('TESTE');
+  };
 
   return(
     <div className="w-full min-h-screen px-4 " >
@@ -38,26 +44,31 @@ export default function Login(){
         <div className='px-4 py-6 bg-offWhite w-full rounded-b flex flex-col items-center' >
           <h2 className='text-2xl text-redColor font-bold' >Conecte-se</h2>
 
-          <form className='w-full flex flex-col' >
-            <div className='flex mt-8' >
-              <div className='h-10 w-1 bg-redColor rounded-l-sm' ></div>
-              <input 
-                type='email'
-                placeholder='seu melhor email...'
-                className='h-10 w-full px-3 rounded-r-sm outline-none'
-              />
-            </div>
+          <form 
+            className='w-full flex flex-col' 
+            onSubmit={ handleSubmit(onSubmit) }
+          >
+            <Input
+              type='email'
+              name='email'
+              placeholder='seu melhor email...'
+              register={ register }
+              error={ errors.email?.message }
+            />
 
-            <div className='flex mt-6' >
-              <div className='h-10 w-1 bg-redColor rounded-l-sm' ></div>
-              <input 
-                type='password'
-                placeholder='sua senha...'
-                className='h-10 w-full px-3 rounded-r-sm outline-none'
-              />
-            </div>
+            <Input
+              type='password'
+              name='password'
+              placeholder='sua senha...'
+              register={ register }
+              error={ errors.password?.message }
+            />
 
-            <button className='w-full bg-redColor mt-6 rounded-sm py-2 text-whiteColor font-bold text-lg' >Entrar</button>
+            <button 
+              className='w-full bg-redColor mt-6 rounded-sm py-2 text-whiteColor font-bold text-lg' 
+              type='submit'
+            > Entrar
+            </button>
           </form>
 
           <Link 

@@ -10,17 +10,19 @@ interface InputProps{
 };
 
 export default function Input({ type, name, placeholder, register, error, rules }: InputProps){
-  <div>
-    <div className='flex mt-8' >
-      <div className='h-10 w-1 bg-redColor rounded-l-sm' ></div>
-      <input 
-        className='h-10 w-full px-3 rounded-r-sm outline-none'
-        type={ type }
-        placeholder={ placeholder }
-        { ...register(name, rules) }
-        id={ name }
-      />
+  return(
+    <div>
+      <div className='flex mt-8' >
+        <div className='h-10 w-1 bg-redColor rounded-l-sm' ></div>
+        <input 
+          className='h-10 w-full px-3 rounded-r-sm outline-none'
+          type={ type }
+          placeholder={ placeholder }
+          { ...register(name, rules) }
+          id={ name }
+        />
+      </div>
+      { error && <p className="p-0 text-redColor mr-auto" >{ error }</p> }
     </div>
-    { error && <p className="p-0 text-redColor mr-auto" >{ error }</p> }
-  </div>
+  );
 };  
