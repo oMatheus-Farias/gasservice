@@ -1,11 +1,15 @@
-import HeaderMobile from "../../components/headerMobile";
+import Background from '../../components/background';
+import HeaderMobile from '../../components/headerMobile';
+import Container from '../../components/container';
 
 export default function Start(){
   return(
-    <div className="bg-bgImage bg-cover bg-center w-full min-h-screen" >
+    <Background>
       <HeaderMobile/>
 
-      <h1>Page Start</h1>
-    </div>
+      <Container>
+        <h1>Page Start</h1>
+      </Container>
+    </Background>
   );
 };
