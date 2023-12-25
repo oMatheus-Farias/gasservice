@@ -1,7 +1,23 @@
 import { Link } from 'react-router-dom';
 import logoImage01 from '../../assets/logo2.svg';
 
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+
+const schema = z.object({
+  email: z.string().email('O email é obrigatório'),
+  password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres').nonempty('A senha é obrogatória'),
+});
+
+type FormData = z.infer<typeof schema>;
+
 export default function Login(){
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+    resolver: zodResolver(schema),
+    mode: 'onChange',
+  });
+
   return(
     <div className="w-full min-h-screen px-4 " >
       <section className='w-full min-h-screen flex flex-col justify-center items-center' >
