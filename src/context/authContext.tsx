@@ -10,8 +10,9 @@ import toast from "react-hot-toast";
 interface AuthContextData{
   signed: boolean,
   user: UserProps | null,
-  signUp: ({name, email, password}: SignUpUserProps) => void,
+  signUp: ({ name, email, password }: SignUpUserProps) => void,
   signIn: ({ email, password }: SignInUserProps) => void,
+  authLoading: boolean,
 };
 
 interface SignInUserProps{
@@ -37,6 +38,7 @@ export default function AuthProvider({ children }: { children: ReactNode }){
   const navigate = useNavigate();
 
   const [user, setUser] = useState<UserProps | null>(null);
+  const [authLoading, setAuthLoading] = useState(false);
 
   useEffect(() => {
     const hasUser = localStorage.getItem('@userData');
@@ -44,9 +46,11 @@ export default function AuthProvider({ children }: { children: ReactNode }){
     if(hasUser){
       setUser(JSON.parse(hasUser));
     };
-  });
+  }, []);
 
-  async function signUp({name, email, password}: SignUpUserProps){
+  async function signUp({ name, email, password }: SignUpUserProps){
+    setAuthLoading(true);
+
     await createUserWithEmailAndPassword(auth, email, password)
     .then(async (value) => {
       let uid = value.user.uid;
@@ -65,17 +69,21 @@ export default function AuthProvider({ children }: { children: ReactNode }){
 
         setUser(data);
         setLocalStorage(data);
+        setAuthLoading(false);
         navigate('/');
         toast.success('Cadastrado com sucesso!');
       });
     })
     .catch((error) => {
+      setAuthLoading(false);
       console.log('Erro ao tentar criar cadastro', error);
       toast.error('Ocorreu um erro inesperado!');
     });
   };
 
   async function signIn({ email, password }: SignInUserProps){
+    setAuthLoading(true);
+
     await signInWithEmailAndPassword(auth, email, password)
     .then(async (value) => {
       let uid = value.user.uid;
@@ -91,10 +99,12 @@ export default function AuthProvider({ children }: { children: ReactNode }){
 
       setUser(data);
       setLocalStorage(data);
+      setAuthLoading(false);
       navigate('/start');
       toast.success('Bem-vindo(a)');
     })
     .catch((error) => {
+      setAuthLoading(false);
       console.log('Erro ao tentar efetuar login', error);
       toast.error('Ocorreu um erro inesperado!');
     });
@@ -105,7 +115,7 @@ export default function AuthProvider({ children }: { children: ReactNode }){
   };
 
   return(
-    <AuthContext.Provider value={{ signed: !!user, user, signUp, signIn }} >
+    <AuthContext.Provider value={{ signed: !!user, user, signUp, signIn, authLoading }} >
       { children }
     </AuthContext.Provider>
   );

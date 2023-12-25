@@ -1,6 +1,8 @@
+import { useContext } from 'react';
+import { AuthContext } from '../../context/authContext';
+
 import { Link } from 'react-router-dom';
 import logoImage01 from '../../assets/logo2.svg';
-
 import Input from '../../components/Input';
 
 import { useForm } from 'react-hook-form';
@@ -16,13 +18,19 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function Register(){
+  const { signUp, authLoading } = useContext(AuthContext);
+
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
     mode: 'onChange',
   });
 
-  function onSubmit(){
-    alert('TESTE');
+  function onSubmit(data: FormData){
+    signUp({
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    });
   };
 
   return(
@@ -76,7 +84,7 @@ export default function Register(){
             <button 
               className='w-full bg-redColor mt-6 rounded-sm py-2 text-whiteColor font-bold text-lg' 
               type='submit'
-            > Cadastrar
+            > { authLoading ? 'Carregando...' : 'Cadastrar' }
             </button>
           </form>
 
