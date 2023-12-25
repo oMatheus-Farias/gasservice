@@ -12,10 +12,10 @@ import OrderNow from "../pages/orderNow";
 export default function AppRoutes(){
   return(
     <Routes>
-      <Route path="/login" element={ <Login/> } />
+      <Route path="/" element={ <Login/> } />
       <Route path="/register" element={ <Register/> } />
 
-      <Route path="/" element={ <Start/> } />
+      <Route path="/start" element={ <Start/> } />
       <Route path="/products" element={ <Products/> } />
       <Route path="/whoweare" element={ <WhoWeAre/> } />
       <Route path="/contacts" element={ <Contacts/> } />

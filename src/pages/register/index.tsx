@@ -54,7 +54,7 @@ export default function Register(){
           </form>
 
           <Link 
-            to='/login'
+            to='/'
             className='text-sm underline mt-6'
           >
             Já possuí uma conta? Faça login!
