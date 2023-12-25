@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 import { auth, db } from "../service/firebaseConfig";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -37,6 +37,14 @@ export default function AuthProvider({ children }: { children: ReactNode }){
 
   const [user, setUser] = useState<UserProps | null>(null);
 
+  useEffect(() => {
+    const hasUser = localStorage.getItem('@userData');
+
+    if(hasUser){
+      setUser(JSON.parse(hasUser));
+    };
+  });
+
   async function signUp({name, email, password}: SignUpUserProps){
     await createUserWithEmailAndPassword(auth, email, password)
     .then(async (value) => {
@@ -55,6 +63,7 @@ export default function AuthProvider({ children }: { children: ReactNode }){
         };
 
         setUser(data);
+        setLocalStorage(data);
         navigate('/');
       });
     })
@@ -78,6 +87,7 @@ export default function AuthProvider({ children }: { children: ReactNode }){
       };
 
       setUser(data);
+      setLocalStorage(data);
       navigate('/start');
     })
     .catch((error) => {
