@@ -7,7 +7,7 @@ interface CardProps{
 
 export default function CardProduct({ image, alternative, title, description }: CardProps){
   return(
-    <section className='mx-auto' >
+    <section>
       <img
         src={ image }
         alt={ alternative }

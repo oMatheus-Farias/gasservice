@@ -13,7 +13,7 @@ import NavMobile from '../../components/navMobile';
 import CardProduct from '../../components/cardProduct';
 
 export default function Products(){
-  const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav } = useContext(AuthContext);
+  const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav, products } = useContext(AuthContext);
 
   useEffect(() => {
     setActivePageIndicator('/products');
@@ -35,7 +35,26 @@ export default function Products(){
         </h1>
 
         <div className='mt-8 w-full grid grid-cols-1 gap-7 lg:grid-cols-2 xl:grid-cols-3' >
-          <section className='mx-auto' >
+          { products.map((item, index) => {
+            return(
+              <div className='mx-auto' key={ index } >
+                <CardProduct
+                  image={ item.image }
+                  alternative={ item.alternative }
+                  title={ item.title }
+                  description={ item.description }
+                />
+              </div>
+            )
+          }) }
+        </div>
+      </Container>
+      { !screenSize && openCloseNav && <NavMobile/> }
+    </Background>
+  );
+};
+
+{/* <section className='mx-auto' >
             <img
               src={ p13Image }
               alt='Imagem cilindro de gás p13'
@@ -69,10 +88,4 @@ export default function Products(){
               <h2 className='mt-3 text-redColor' >P45:</h2>
               <p className='text-whiteColor text-justify' >Com 3,5 vezes mais conteúdo que o P13, é o mais utilizado em estabelecimentos comerciais, principalmente restaurantes e cozinhas industriais, em que a utilização do gás é intensa.</p>
             </div>
-          </section>
-        </div>
-      </Container>
-      { !screenSize && openCloseNav && <NavMobile/> }
-    </Background>
-  );
-};
+          </section> */}

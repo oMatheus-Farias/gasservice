@@ -24,7 +24,7 @@ interface AuthContextData{
   setOpenCloseNav: any,
   logOut: () => void,
   loading: boolean,
-  products: any,
+  products: ProjectsData[],
 };
 
 interface SignInUserProps{
@@ -42,6 +42,13 @@ interface UserProps{
   uid: string | null,
   name: string | null,
   email: string | null,
+};
+
+interface ProjectsData{
+  image: string,
+  alternative: string,
+  title: string,
+  description: string,
 };
 
 export const AuthContext = createContext({} as AuthContextData);
