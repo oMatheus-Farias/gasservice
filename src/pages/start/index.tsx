@@ -34,7 +34,7 @@ export default function Start(){
           <span className='text-whiteColor' >: Onde qualidade e segurança se encontram!</span>
         </h1>
 
-        <main className='w-full bg-redColor py-6 rounded mt-6 flex flex-col items-center lg:max-w-6xl lg:mx-auto' >
+        <main className='w-full bg-primary py-6 rounded mt-6 flex flex-col items-center lg:max-w-6xl lg:mx-auto' >
           <div className='px-8 lg:w-full lg:flex lg:items-center justify-between lg:px-28' >
             <img
               className='mx-auto lg:mx-0'
