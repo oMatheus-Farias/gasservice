@@ -32,14 +32,14 @@ export default function WhoWeAre(){
         </h1>
 
         <main 
-          className='w-full px-8 py-6 mt-6 bg-primary rounded flex flex-col justify-center items-center max-w-[720px] mx-auto lg:flex-row lg:max-w-[1160px] lg:gap-28 lg:py-16' 
+          className='w-full px-8 py-6 mt-6 bg-primary rounded flex flex-col justify-center items-center max-w-[45em] mx-auto lg:flex-row lg:max-w-[72.5em] lg:gap-28 lg:py-16' 
         >
           <img
             src={ logoImage03 }
             alt='Logo Gás Service e-commerce'
           />
 
-          <div className='max-w-[500px]' >
+          <div className='max-w-[31.25em]' >
             <p className='mt-6 text-whiteColor text-justify lg:mt-0' >
               A Gás Service é muito mais que um sistema de gás; somos a expressão da simplicidade e modernização no universo da compra de GLP. Com a recente implementação do nosso novo sistema, estamos solidificando nossa estrutura para oferecer atendimento em todo o território nacional, proporcionando conveniência e eficiência a todos os nossos clientes.
               Diferentemente de um e-commerce tradicional, a Gaservice é um sistema integrado com diversas empresas interessadas em disponibilizar seus produtos em nossa plataforma. Isso significa que não somos apenas um ponto de venda, mas sim um ecossistema conectado, unindo fornecedores e consumidores em uma experiência única.

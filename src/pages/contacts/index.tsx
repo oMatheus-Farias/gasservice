@@ -24,7 +24,10 @@ export default function Contacts(){
       { screenSize !== null ? screenSize ? <HeaderDasktop/> : <HeaderMobile/> : ''}
 
       <Container>
-        <h1>Page Contacts</h1>
+        <h1 className='mt-8 text-whiteColor text-lg text-center font-semibold sm:text-2xl' >
+          Clique, converse e conte conosco
+          <span className='text-redColor' >:</span>
+        </h1>
       </Container>
       { !screenSize && openCloseNav && <NavMobile/> }
     </Background>
