@@ -1,4 +1,4 @@
-import { UseFormRegister, RegisterOptions } from "react-hook-form"
+import { UseFormRegister, RegisterOptions } from 'react-hook-form';
 
 interface InputProps{
   type: string,

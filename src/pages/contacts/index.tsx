@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../context/authContext';
 
 import groupImage from '../../assets/group-images.png';
-import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 import Background from '../../components/background';
 import HeaderMobile from '../../components/headerMobile';

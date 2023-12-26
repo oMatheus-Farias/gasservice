@@ -1,11 +1,11 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
-import { auth, db } from "../service/firebaseConfig";
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth, db } from '../service/firebaseConfig';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
-import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 import p13Image from '../assets/p13.png';
 import p20Image from '../assets/p20.png';

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/authContext';
 
 import { Link } from 'react-router-dom';
-import { IoIosClose } from "react-icons/io";
+import { IoIosClose } from 'react-icons/io';
 
 export default function NavMobile(){
   const { openCloseNav, setOpenCloseNav, activePageIndicator } = useContext(AuthContext);

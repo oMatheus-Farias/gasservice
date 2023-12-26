@@ -1,15 +1,15 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
-import Login from "../pages/login";
-import Register from "../pages/register";
+import Login from '../pages/login';
+import Register from '../pages/register';
 
-import Start from "../pages/start";
-import Products from "../pages/products";
-import WhoWeAre from "../pages/whoWeAre";
-import Contacts from "../pages/contacts";
-import OrderNow from "../pages/orderNow";
+import Start from '../pages/start';
+import Products from '../pages/products';
+import WhoWeAre from '../pages/whoWeAre';
+import Contacts from '../pages/contacts';
+import OrderNow from '../pages/orderNow';
 
-import PrivateRoutes from "./privateRoutes";
+import PrivateRoutes from './privateRoutes';
 
 export default function AppRoutes(){
   return(
