@@ -24,7 +24,23 @@ export default function OrderNow(){
       { screenSize !== null ? screenSize ? <HeaderDasktop/> : <HeaderMobile/> : ''}
 
       <Container>
-        <h1>Page OrderNow</h1>
+        <div className='flex flex-col items-center h-heigthScreen' >
+          <h1 className='mt-8 text-whiteColor text-2xl font-semibold' >
+            Clique e
+            <span className='text-redColor uppercase' > Peça agora</span>
+            <span>!</span>
+          </h1>
+
+          <h2 className='text-whiteColor text-[11px] mt-5 sm:text-lg lg:text-xl' >
+            Entre em contato no botão abaixo e não perca as promoções!!
+          </h2>
+
+          <div className='w-full h-full flex justify-center items-center max-w-[520px]' >
+            <button className='bg-redColor w-full py-7 rounded' >
+              <a className='text-whiteColor font-bold text-3xl' >Fazer meu pedido</a>
+            </button>
+          </div>
+        </div>
       </Container>
       { !screenSize && openCloseNav && <NavMobile/> }
     </Background>
