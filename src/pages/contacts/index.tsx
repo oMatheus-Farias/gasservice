@@ -11,7 +11,7 @@ import Container from '../../components/container';
 import NavMobile from '../../components/navMobile';
 
 export default function Contacts(){
-  const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav} = useContext(AuthContext);
+  const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav } = useContext(AuthContext);
 
   useEffect(() => {
     setActivePageIndicator('/contacts');
@@ -52,7 +52,7 @@ export default function Contacts(){
 
           <div className='flex justify-center' >
             <img
-              className='mt-20'
+              className='mt-12'
               src={ groupImage }
               alt='Imagem dupla cilindros de gás'
             />
