@@ -9,10 +9,12 @@ export default function HeaderMobile(){
 
   return(
     <header className='w-full bg-whiteColor flex items-center justify-between pl-[0.68em] pr-4' >
-      <img
-        src={ logoImage01 }
-        alt='Logo Gás Service'
-      />
+      <Link to='/start' >
+        <img
+          src={ logoImage01 }
+          alt='Logo Gás Service'
+        />
+      </Link>
 
       <nav>
         <ul className='flex gap-5' >
