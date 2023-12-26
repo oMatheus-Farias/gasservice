@@ -10,6 +10,7 @@ import HeaderMobile from '../../components/headerMobile';
 import HeaderDasktop from '../../components/headerDasktop';
 import Container from '../../components/container';
 import NavMobile from '../../components/navMobile';
+import CardProduct from '../../components/cardProduct';
 
 export default function Products(){
   const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav } = useContext(AuthContext);

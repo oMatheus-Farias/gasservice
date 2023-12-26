@@ -7,6 +7,10 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } f
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
+import p13Image from '../assets/p13.png';
+import p20Image from '../assets/p20.png';
+import p45Image from '../assets/p45.png';
+
 interface AuthContextData{
   signed: boolean,
   user: UserProps | null,
@@ -20,6 +24,7 @@ interface AuthContextData{
   setOpenCloseNav: any,
   logOut: () => void,
   loading: boolean,
+  products: any,
 };
 
 interface SignInUserProps{
@@ -51,6 +56,27 @@ export default function AuthProvider({ children }: { children: ReactNode }){
   const [activePageIndicator, setActivePageIndicator] = useState<string>('');
   const [openCloseNav, setOpenCloseNav] = useState(false);
   const [ loading, setLoading ] = useState(true);
+
+  const products = [
+    {
+      image: p13Image,
+      alternative: 'Imagem cilindro de gás p13',
+      title: 'P13',
+      description: 'O botijão de 13 quilos, popularmente conhecido como “gás de cozinha” ou “botijão doméstico”, é o formato mais conhecido de comercialização do GLP e destina-se basicamente aos lares para preparação de alimentos.',
+    },
+    {
+      image: p20Image,
+      alternative: 'Imagem cilindro de gás p20',
+      title: 'P20',
+      description: 'Utilizado em empilhadeiras da área industrial, o P20 (20 kg) serve como um combustível eficiente e se diferencia por ficar na posição horizontal, e não na vertical, como os demais modelos.',
+    },
+    {
+      image: p45Image,
+      alternative: 'Imagem cilindro de gás p45',
+      title: 'P45',
+      description: 'Com 3,5 vezes mais conteúdo que o P13, é o mais utilizado em estabelecimentos comerciais, principalmente restaurantes e cozinhas industriais, em que a utilização do gás é intensa.',
+    },
+  ];
 
   useEffect(() => {
     handleScreenSize();
@@ -163,7 +189,8 @@ export default function AuthProvider({ children }: { children: ReactNode }){
       openCloseNav,
       setOpenCloseNav,
       logOut,
-      loading 
+      loading,
+      products, 
     }} 
     >
       { children }
