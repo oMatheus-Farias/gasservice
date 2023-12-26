@@ -1,14 +1,20 @@
+import { useContext } from 'react';
+import { AuthContext } from '../../context/authContext';
+
 import Background from '../../components/background';
 import HeaderMobile from '../../components/headerMobile';
+import HeaderDasktop from '../../components/headerDasktop';
 import Container from '../../components/container';
 
 import mainImage from '../../assets/main-image.png';
 import companyImage from '../../assets/company.png';
 
 export default function Start(){
+  const { screenSize } = useContext(AuthContext);
+
   return(
     <Background>
-      <HeaderMobile/>
+      { screenSize !== null ? screenSize ? <HeaderDasktop/> : <HeaderMobile/> : ''}
 
       <Container>
         <p className='text-whiteColor mt-4 text-sm' >Bem-vindo(a), Matheus</p>
