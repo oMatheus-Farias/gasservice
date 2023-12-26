@@ -1,6 +1,9 @@
 import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../context/authContext';
 
+import groupImage from '../../assets/group-images.png';
+import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
+
 import Background from '../../components/background';
 import HeaderMobile from '../../components/headerMobile';
 import HeaderDasktop from '../../components/headerDasktop';
@@ -28,6 +31,33 @@ export default function Contacts(){
           Clique, converse e conte conosco
           <span className='text-redColor' >:</span>
         </h1>
+
+        <div className='md:flex md:justify-between md:items-center md:max-w-[55.62em] md:mx-auto md:mt-14' >
+          <section className='mt-8 flex flex-col gap-9' >
+            <div className='flex items-center gap-3' >
+              <FaWhatsapp size={48} color='#ED3237' />
+              <p className='text-whiteColor' >Whatsapp (11) 4002-8922</p>
+            </div>
+
+            <div className='flex items-center gap-3' >
+              <FaFacebook size={48} color='#ED3237' />
+              <p className='text-whiteColor' >Facebook Gasservice Oficial</p>
+            </div>
+
+            <div className='flex items-center gap-3' >
+              <FaInstagram size={48} color='#ED3237' />
+              <p className='text-whiteColor' >Instagram Gasservice Oficial</p>
+            </div>
+          </section>
+
+          <div className='flex justify-center' >
+            <img
+              className='mt-20'
+              src={ groupImage }
+              alt='Imagem dupla cilindros de gás'
+            />
+          </div>
+        </div>
       </Container>
       { !screenSize && openCloseNav && <NavMobile/> }
     </Background>
