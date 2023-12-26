@@ -16,6 +16,8 @@ interface AuthContextData{
   screenSize: any,
   activePageIndicator: string,
   setActivePageIndicator: any,
+  openCloseNav: boolean,
+  setOpenCloseNav: any,
 };
 
 interface SignInUserProps{
@@ -42,8 +44,10 @@ export default function AuthProvider({ children }: { children: ReactNode }){
 
   const [user, setUser] = useState<UserProps | null>(null);
   const [authLoading, setAuthLoading] = useState(false);
+
   const [screenSize, setScreenSize] = useState<any>(null);
   const [activePageIndicator, setActivePageIndicator] = useState<string>('');
+  const [openCloseNav, setOpenCloseNav] = useState(false);
 
   useEffect(() => {
     handleScreenSize();
@@ -136,7 +140,9 @@ export default function AuthProvider({ children }: { children: ReactNode }){
       authLoading, 
       screenSize, 
       activePageIndicator, 
-      setActivePageIndicator 
+      setActivePageIndicator,
+      openCloseNav,
+      setOpenCloseNav, 
     }} 
     >
       { children }

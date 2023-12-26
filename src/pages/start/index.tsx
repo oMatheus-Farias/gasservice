@@ -5,15 +5,17 @@ import Background from '../../components/background';
 import HeaderMobile from '../../components/headerMobile';
 import HeaderDasktop from '../../components/headerDasktop';
 import Container from '../../components/container';
+import NavMobile from '../../components/navMobile';
 
 import mainImage from '../../assets/main-image.png';
 import companyImage from '../../assets/company.png';
 
 export default function Start(){
-  const { screenSize, setActivePageIndicator } = useContext(AuthContext);
+  const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav } = useContext(AuthContext);
 
   useEffect(() => {
     setActivePageIndicator('/start');
+    setOpenCloseNav(false);
 
     return () => {
       setActivePageIndicator('');
@@ -62,6 +64,7 @@ export default function Start(){
           </div>
         </main>
       </Container>
+      { !screenSize && openCloseNav && <NavMobile/> }
     </Background>
   );
 };

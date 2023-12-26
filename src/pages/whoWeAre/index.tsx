@@ -5,12 +5,14 @@ import Background from '../../components/background';
 import HeaderMobile from '../../components/headerMobile';
 import HeaderDasktop from '../../components/headerDasktop';
 import Container from '../../components/container';
+import NavMobile from '../../components/navMobile';
 
 export default function WhoWeAre(){
-  const { screenSize, setActivePageIndicator } = useContext(AuthContext);
+  const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav } = useContext(AuthContext);
 
   useEffect(() => {
     setActivePageIndicator('/whoweare');
+    setOpenCloseNav(false);
 
     return () => {
       setActivePageIndicator('');
@@ -24,6 +26,7 @@ export default function WhoWeAre(){
       <Container>
         <h1>Page WhoWeAre</h1>
       </Container>
+      { !screenSize && openCloseNav && <NavMobile/> }
     </Background>
   );
 };
