@@ -2,7 +2,7 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 
 import { auth, db } from "../service/firebaseConfig";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -18,6 +18,7 @@ interface AuthContextData{
   setActivePageIndicator: any,
   openCloseNav: boolean,
   setOpenCloseNav: any,
+  logOut: () => void,
 };
 
 interface SignInUserProps{
@@ -130,6 +131,19 @@ export default function AuthProvider({ children }: { children: ReactNode }){
     localStorage.setItem('@userData', JSON.stringify(data));
   };
 
+  async function logOut(){
+    await signOut(auth)
+    .then(() => {
+      localStorage.removeItem('@userData');
+      setUser(null);
+      toast.success('Volte sempre!');
+    })
+    .catch((error) => {
+      console.log('Erro ao tentar efetuar logOut.', error);
+      toast.error('Ocorreu um erro inesperado.');
+    });
+  };
+
   return(
     <AuthContext.Provider 
     value={{ 
@@ -142,7 +156,8 @@ export default function AuthProvider({ children }: { children: ReactNode }){
       activePageIndicator, 
       setActivePageIndicator,
       openCloseNav,
-      setOpenCloseNav, 
+      setOpenCloseNav,
+      logOut, 
     }} 
     >
       { children }
