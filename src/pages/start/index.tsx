@@ -11,7 +11,7 @@ import mainImage from '../../assets/main-image.png';
 import companyImage from '../../assets/company.png';
 
 export default function Start(){
-  const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav, user } = useContext(AuthContext);
+  const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav, user, logOut } = useContext(AuthContext);
 
   useEffect(() => {
     setActivePageIndicator('/start');
@@ -27,7 +27,15 @@ export default function Start(){
       { screenSize !== null ? screenSize ? <HeaderDasktop/> : <HeaderMobile/> : ''}
 
       <Container>
-        <p className='text-whiteColor mt-4 text-sm' >{ `Bem-vindo(a), ${user?.name}` }</p>
+        <div>
+          <p className='text-whiteColor mt-4 text-sm' >{ `Bem-vindo(a), ${user?.name}` }</p>
+          <button 
+            className='text-redColor text-sm underline'
+            onClick={ logOut } 
+          >
+            Sair
+          </button>
+        </div>
 
         <h1 className='text-redColor text-[0.81em] text-center mt-8 sm:text-xl' >
           Gás Service
