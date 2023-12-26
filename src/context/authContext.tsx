@@ -19,6 +19,7 @@ interface AuthContextData{
   openCloseNav: boolean,
   setOpenCloseNav: any,
   logOut: () => void,
+  loading: boolean,
 };
 
 interface SignInUserProps{
@@ -49,6 +50,7 @@ export default function AuthProvider({ children }: { children: ReactNode }){
   const [screenSize, setScreenSize] = useState<any>(null);
   const [activePageIndicator, setActivePageIndicator] = useState<string>('');
   const [openCloseNav, setOpenCloseNav] = useState(false);
+  const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
     handleScreenSize();
@@ -56,7 +58,10 @@ export default function AuthProvider({ children }: { children: ReactNode }){
 
     if(hasUser){
       setUser(JSON.parse(hasUser));
+      setLoading(false);
     };
+
+    setLoading(false);
   }, []);
 
   window.addEventListener('resize', handleScreenSize);
@@ -157,7 +162,8 @@ export default function AuthProvider({ children }: { children: ReactNode }){
       setActivePageIndicator,
       openCloseNav,
       setOpenCloseNav,
-      logOut, 
+      logOut,
+      loading 
     }} 
     >
       { children }
