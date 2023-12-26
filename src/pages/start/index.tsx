@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../context/authContext';
 
 import Background from '../../components/background';
@@ -10,7 +10,15 @@ import mainImage from '../../assets/main-image.png';
 import companyImage from '../../assets/company.png';
 
 export default function Start(){
-  const { screenSize } = useContext(AuthContext);
+  const { screenSize, setActivePageIndicator } = useContext(AuthContext);
+
+  useEffect(() => {
+    setActivePageIndicator('/start');
+
+    return () => {
+      setActivePageIndicator('');
+    };
+  }, []);
 
   return(
     <Background>
