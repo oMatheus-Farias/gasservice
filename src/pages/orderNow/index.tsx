@@ -37,7 +37,13 @@ export default function OrderNow(){
 
           <div className='w-full h-full flex justify-center items-center max-w-[520px]' >
             <button className='bg-redColor w-full py-7 rounded' >
-              <a className='text-whiteColor font-bold text-3xl' >Fazer meu pedido</a>
+              <a 
+                className='text-whiteColor font-bold text-3xl'
+                href="https://api.whatsapp.com/send?phone=5511993879835&amp;text=Ol%C3%A1,%20Gostaria%20de%20fazer%20o%20seguinte%20pedido:"
+                target='_blank' 
+              >
+                Fazer meu pedido
+              </a>
             </button>
           </div>
         </div>
