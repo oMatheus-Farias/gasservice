@@ -2,7 +2,7 @@
 
 # Gás Service
 
-A Gás Service, projeto web totalmente responsivo, representa a vanguarda da excelência no mercado de Gás Liquefeito de Petróleo (GLP). Desenvolvido com TypeScript, ReactJS, Tailwind CSS, React Router DOM, Firebase como banco de dados, Git, Vite e Vercel. O site oferece uma experiência de usuário fluida e envolvente em todos os dispositivos.
+Gás Service, projeto web totalmente responsivo, representa a vanguarda da excelência no mercado de Gás Liquefeito de Petróleo (GLP). Desenvolvido com TypeScript, ReactJS, Tailwind CSS, React Router DOM, Firebase como banco de dados, Git, Vite e Vercel. O site oferece uma experiência de usuário fluida e envolvente em todos os dispositivos.
 
 ## 🔥 Funcionalidades Principais
 
@@ -29,14 +29,13 @@ A Gás Service, projeto web totalmente responsivo, representa a vanguarda da exc
 ### 📦 Tecnologias usadas
 
 * ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-* ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 * ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-* ![Context-API](https://img.shields.io/badge/Context--Api-000000?style=for-the-badge&logo=react)
-* ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-* ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-* ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
-* ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-
+* ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+* ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+* ![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
+* ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+* ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ### 📄 Licença
 
