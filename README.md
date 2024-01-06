@@ -1,18 +1,18 @@
-![Logo do projeto](https://raw.githubusercontent.com/oMatheus-Farias/webbarberpro/main/public/mockup-BarberPRO.png)
+![Logo do projeto](https://raw.githubusercontent.com/oMatheus-Farias/gasservice/main/src/assets/mockup-Gasservice.png)
 
-# BarberPRO
+# Gás Service
 
-BarberPRO é uma aplicação web desenvolvida para atender às necessidades específicas de barbearias, proporcionando uma gestão eficiente dos serviços, cortes e informações dos clientes. O sistema foi construído utilizando tecnologias modernas como NextJS, TypeScript, Context API, TailwindCSS, NodeJS, PostgreSQL, Prisma, e Git.
+A Gás Service, projeto web totalmente responsivo, representa a vanguarda da excelência no mercado de Gás Liquefeito de Petróleo (GLP). Desenvolvido com TypeScript, ReactJS, Tailwind CSS, React Router DOM, Firebase como banco de dados, Git, Vite e Vercel. O site oferece uma experiência de usuário fluida e envolvente em todos os dispositivos.
 
 ## 🔥 Funcionalidades Principais
 
-- **API Segura com NodeJS:** Uma API robusta foi desenvolvida em NodeJS para gerenciar as requisições da aplicação, garantindo eficiência e segurança.
-- **Cadastro e Login Seguros:** Sistema de cadastro e login seguro com criptografia de senha, geração de token JWT para autenticação e páginas de cadastro e login acessíveis apenas por usuários deslogados.
-- **Dashboard:** Ao logar, os usuários são redirecionados para o dashboard, onde a agenda da barbearia é exibida. Informações sobre serviços cadastrados incluem nome do cliente, tipo de corte e preço. Possibilidade de finalizar um serviço, removendo-o do banco de dados.
-- **Página de Cortes:** Lista de cortes cadastrados pelo usuário, com opção de filtrar entre ativos e inativos. Usuários premium podem cadastrar quantos modelos de corte desejarem; não premium têm limite de três cortes. Botão de cadastrar novo direciona para a página de cadastro de modelo de corte.
-Página de editar modelo acessível apenas para usuários premium.
-- **Minha Conta:** Os usuários podem editar o nome da barbearia e adicionar um endereço. Opção de fazer logout da conta. Indicação do plano do usuário (premium ou gratuito). Botão para mudar de plano direciona para a página de Planos.
-- **Planos:** Página com informações detalhadas sobre os planos (gratuito e premium). Botão "Virar Premium" para usuários gratuitos. Mensagem indicando que o usuário já é premium, com opção de mudar de plano para usuários premium.
+- **Login Seguro:** Os usuários têm a capacidade de acessar suas contas utilizando um endereço de e-mail e senha exclusivos. Esse método de autenticação confiável protege as informações dos clientes, garantindo que apenas usuários autorizados tenham acesso à plataforma.
+- **Cadastro de Usuário:** Durante o processo de cadastro, os usuários fornecem informações essenciais, incluindo nome, endereço de e-mail e uma senha segura. Esse procedimento é rápido e intuitivo, permitindo que os clientes criem suas contas de forma eficiente.
+- **Home:** Na página inicial, os visitantes são recebidos com uma mensagem que destaca a posição de liderança da Gás Service na inovação e compromisso com qualidade e segurança. A narrativa convida os usuários a fazerem parte dessa história, onde cada entrega é mais que um produto, é uma garantia de serviço de alta qualidade.
+- **Produtos:** A segunda página exibe a variedade de produtos disponíveis, desde os cilindros P13, P20 até o P45. Cada item é acompanhado por descrições detalhadas, proporcionando aos clientes informações precisas sobre os produtos que atendem tanto a residências quanto a empresas.
+- **Quem Somos:** Na terceira página, a Gás Service se apresenta como mais que um sistema de gás; é a expressão da simplicidade e modernização na compra de GLP. A integração com diversas empresas cria um ecossistema único, oferecendo aos clientes uma experiência de compra conveniente e eficiente. O foco na estabilização do sistema para expansão mobile mostra a visão inovadora da empresa.
+- **Contatos:** A quarta página fornece os canais de comunicação direta, incluindo WhatsApp, Facebook e Instagram. Essa abordagem pró-ativa demonstra o compromisso da Gás Service em manter uma conexão próxima com seus clientes.
+- **Faça Seu Pedido:** Na última página, a Gás Service convida os clientes a realizar seus pedidos com um botão centralizado e chamativo - "Fazer meu pedido". Essa interface simplificada oferece praticidade aos usuários, incentivando a conversão.
   
 ### ⚙️ Pré-requisitos
 
@@ -20,8 +20,8 @@ Página de editar modelo acessível apenas para usuários premium.
 
 ### 🔨 Guia de instalação
 
-1. Clone o repositório: `git clone https://github.com/oMatheus-Farias/webbarberpro.git`>
-2. Navegue até o diretório do projeto: `cd webbarberpro`
+1. Clone o repositório: `git clone https://github.com/oMatheus-Farias/gasservice.git`>
+2. Navegue até o diretório do projeto: `cd gasservice`
 3. Instale as dependências: `npm install` (ou use o gerenciador de pacotes apropriado)
 4. Inicie o servidor: `npm run dev` (ou use o comando adequado)
 5. O aplicativo estará disponível no localhost que aparecera no seu painel ex: [http://localhost:3000](http://localhost:3000/)
