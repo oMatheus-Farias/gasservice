@@ -51,7 +51,7 @@ export default function Start() {
         </div>
 
         <div className="w-full flex justify-center mt-10">
-          <img src={logo} alt="Logo Gás Service" />
+          <img src={logo} alt="Logo Gás Service" className="rounded-[2px]" />
         </div>
 
         <main className="w-full bg-redColor py-6 rounded mt-6 flex flex-col items-center lg:max-w-6xl lg:mx-auto">
