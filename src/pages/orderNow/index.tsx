@@ -49,7 +49,7 @@ export default function OrderNow() {
     }
 
     return window.open(
-      `https://api.whatsapp.com/send?phone=5511993879835&amp;text=${message}`,
+      `https://wa.me/5511993879835/?text=${message}`,
       "_blank"
     );
   };
