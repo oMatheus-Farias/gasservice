@@ -45,17 +45,23 @@ export default function Contacts() {
           <section className="mt-8 flex flex-col gap-9">
             <div className="flex items-center gap-3">
               <FaWhatsapp size={48} color="#ED3237" />
-              <p className="text-whiteColor">Whatsapp (11) 99387-9835</p>
+              <p className="text-whiteColor text-lg">
+                Whatsapp (11) 99387-9835
+              </p>
             </div>
 
             <div className="flex items-center gap-3">
               <FaFacebook size={48} color="#ED3237" />
-              <p className="text-whiteColor">Facebook Gasservice Oficial</p>
+              <p className="text-whiteColor text-lg">
+                Facebook Gasservice Oficial
+              </p>
             </div>
 
             <div className="flex items-center gap-3">
               <FaInstagram size={48} color="#ED3237" />
-              <p className="text-whiteColor">Instagram Gasservice Oficial</p>
+              <p className="text-whiteColor text-lg">
+                Instagram Gasservice Oficial
+              </p>
             </div>
           </section>
 
