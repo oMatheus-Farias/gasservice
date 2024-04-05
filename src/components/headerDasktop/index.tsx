@@ -8,9 +8,9 @@ export default function HeaderMobile() {
   const { activePageIndicator } = useContext(AuthContext);
 
   return (
-    <header className="w-full bg-whiteColor flex items-center justify-between pl-[0.68em] pr-4">
+    <header className="h-24 w-full bg-whiteColor flex items-center justify-between pl-[0.68em] pr-4">
       <Link to="/start">
-        <img src={logoImage01} alt="Logo Gás Service" />
+        <img src={logoImage01} alt="Logo Gás Service" className="h-24 w-24" />
       </Link>
 
       <nav>
