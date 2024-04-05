@@ -44,14 +44,16 @@ export default function Start() {
 
       <Container>
         <div>
-          <p className="text-whiteColor mt-4 text-sm">{`Bem-vindo(a), ${user?.name}`}</p>
-          <button className="text-redColor text-sm underline" onClick={logOut}>
+          <p className="text-whiteColor mt-4 text-lg">{`Bem-vindo(a), ${user?.name}`}</p>
+          <button className="text-redColor text-lg underline" onClick={logOut}>
             Sair
           </button>
         </div>
 
         <div className="w-full flex justify-center mt-10">
-          <img src={logo} alt="Logo Gás Service" className="rounded-[2px]" />
+          <div className="rounded-[2px] overflow-hidden">
+            <img src={logo} alt="Logo Gás Service" className=" h-24" />
+          </div>
         </div>
 
         <main className="w-full bg-redColor py-6 rounded mt-6 flex flex-col items-center lg:max-w-6xl lg:mx-auto">
