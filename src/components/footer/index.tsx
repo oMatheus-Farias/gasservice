@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="flex justify-between w-full max-w-[700px]">
         <section className="flex flex-col items-center gap-1">
           <FaWhatsapp color="#ED3237" className="text-3xl lg:text-4xl" />
-          <p className="text-xs sm:text-base lg:text-lg">11 94002-8922</p>
+          <p className="text-xs sm:text-base lg:text-lg">(11) 99387-9835</p>
         </section>
 
         <section className="flex flex-col items-center gap-1">
