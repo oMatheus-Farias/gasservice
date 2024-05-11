@@ -43,8 +43,8 @@ export default function Start() {
       )}
 
       <Container>
-        <div>
-          <p className="text-whiteColor mt-4 text-lg">{`Bem-vindo(a), ${user?.name}`}</p>
+        <div className="flex flex-col items-end">
+          <p className="text-whiteColor mt-4 text-lg text-left">{`Bem-vindo(a), ${user?.name}`}</p>
           <button className="text-redColor text-lg underline" onClick={logOut}>
             Sair
           </button>
