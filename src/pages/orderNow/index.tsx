@@ -29,7 +29,7 @@ export default function OrderNow() {
 
   const { screenSize, setActivePageIndicator, openCloseNav, setOpenCloseNav } =
     useContext(AuthContext);
-
+  //@ts-ignore
   const [productSelected, setProductSelected] = useState(productsList[0].value);
   const [quantity, setQuantity] = useState<string>("1");
   const [listProductsSelecteds, setListProdusctsSelecteds] = useState<string[]>(
