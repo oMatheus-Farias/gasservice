@@ -41,7 +41,6 @@ export default function Products() {
       <Container>
         <h1 className="mt-8 text-whiteColor text-2xl text-center font-semibold">
           Produtos
-          <span className="text-redColor">:</span>
         </h1>
 
         <div className="mt-8 w-full grid grid-cols-1 gap-7 lg:grid-cols-2 xl:grid-cols-3 max-w-[1300px] mx-auto">

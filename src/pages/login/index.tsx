@@ -64,9 +64,9 @@ export default function Login() {
               </p>
             )}
 
-            <div className="my-9 px-3 py-2 bg-redColor rounded-sm">
-              <p className="font-bold text-base text-whiteColor text-center">
-                Venha conhecer!
+            <div className="my-9 py-2">
+              <p className="font-bold text-base text-whiteColor">
+                Conecte-se e venha conhecer!
               </p>
             </div>
           </section>
