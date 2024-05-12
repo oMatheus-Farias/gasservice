@@ -32,20 +32,41 @@ export default function OrderNow() {
 
   const [productSelected, setProductSelected] = useState(productsList[0].value);
   const [quantity, setQuantity] = useState<string>("1");
+  const [listProductsSelecteds, setListProdusctsSelecteds] = useState<string[]>(
+    []
+  );
+
+  const handleDeleteProducts = (index: number) => {
+    const newList = listProductsSelecteds.filter((_, i) => i !== index);
+    setListProdusctsSelecteds(newList);
+  };
 
   const handleProductSelected = (e: string) => {
     setProductSelected(e);
+    setListProdusctsSelecteds((prev) => {
+      if (prev.includes(e)) {
+        return prev;
+      }
+
+      return [...prev, e];
+    });
   };
 
   const handleQuantity = (e: string) => {
     setQuantity(e);
   };
 
-  const message = `Olá, gostaria de fazer o seguinte pedido: Produto: Botijão de gás ${productSelected}, quantidade: ${quantity}`;
+  const message = `Olá, gostaria de fazer o seguinte pedido: Produto(s): Botijão de gás ${listProductsSelecteds.join(
+    ", "
+  )}, quantidade de cada: ${quantity}`;
 
   const handleSubmitOrderNow = () => {
     if (quantity === "" || quantity <= "0") {
       return toast.error("Digite uma quantidade válida!");
+    }
+
+    if (listProductsSelecteds.length === 0) {
+      return toast.error("Selecione pelo menos um produto!");
     }
 
     return window.open(
@@ -90,7 +111,7 @@ export default function OrderNow() {
             <form className="flex flex-col w-full gap-4">
               <div className="flex flex-col gap-1">
                 <label className="text-lg text-whiteColor font-semibold">
-                  Produto
+                  Selecione os produtos que deseja
                 </label>
                 <select
                   className="w-full rounded py-2 px-3"
@@ -102,6 +123,30 @@ export default function OrderNow() {
                     </option>
                   ))}
                 </select>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                <label className="text-whiteColor text-lg font-semibold">
+                  Produtos selecionados
+                </label>
+
+                <div className="w-full rounded py-2 px-3 bg-whiteColor min-h-10 max-h-40 overflow-auto">
+                  {listProductsSelecteds.length > 0 ? (
+                    listProductsSelecteds.map((product, index) => (
+                      <div key={index} className="flex justify-between">
+                        <p>Botijão de gás {product}</p>
+                        <span
+                          className="cursor-pointer"
+                          onClick={() => handleDeleteProducts(index)}
+                        >
+                          X
+                        </span>
+                      </div>
+                    ))
+                  ) : (
+                    <p>Nenhum produto selecionado</p>
+                  )}
+                </div>
               </div>
 
               <div className="flex flex-col gap-1">
